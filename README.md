@@ -48,13 +48,30 @@ A sleek, modern Pomodoro timer application designed to boost productivity throug
 ## Installation & Setup
 
 1. Clone the repository:
+```py
+git clone https://github.com/yourusername/aura-focus-timer.git
+```
 
 Navigate to the project directory:
-
+```py
+cd aura-focus-timer
+```
 Open index.html in your browser, or serve it using a local development server.
 
 ## Project Structure
-
+```bash
+aura-focus-timer/
+├── css/
+│   ├── style.css          # Main styling
+│   └── night-mode.css     # Dark theme styling
+├── js/
+│   └── app.js             # Application logic
+├── assets/
+│   └── sounds/
+│       ├── alarm.mp3      # Session transition sound
+│       └── end.mp3        # Completion sound
+└── index.html             # Main HTML document
+```
 ## Browser Compatibility
 
 - Chrome (latest)
