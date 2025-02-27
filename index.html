@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Focus Timer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/night-mode.css" id="night-mode-stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-lg mx-auto timer-card">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Aura Focus Timer</h1>
+                
+                <div id="timer-display" class="display-1 text-center mb-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Current time remaining">25:00</div>
+                
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <button id="start-button" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Start the timer">
+                        <i class="fas fa-play me-2"></i>Start
+                    </button>
+                    <button id="stop-button" class="btn btn-danger btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Pause the timer">
+                        <i class="fas fa-pause me-2"></i>Pause
+                    </button>
+                    <button id="reset-button" class="btn btn-secondary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Reset the timer to default settings">
+                        <i class="fas fa-redo-alt me-2"></i>Reset
+                    </button>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Preset Timers</h5>
+                    </div>
+                    <div class="card-body d-flex justify-content-center gap-2">
+                        <button class="btn btn-dark work-time" data-time="10" data-bs-toggle="tooltip" data-bs-placement="top" title="Set a 10-minute work session with 5-minute breaks">10 Minutes</button>
+                        <button class="btn btn-dark work-time" data-time="15" data-bs-toggle="tooltip" data-bs-placement="top" title="Set a 15-minute work session with 5-minute breaks">15 Minutes</button>
+                        <button class="btn btn-dark work-time" data-time="20" data-bs-toggle="tooltip" data-bs-placement="top" title="Set a 20-minute work session with 5-minute breaks">20 Minutes</button>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Custom Timer</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <input type="number" id="custom-time" class="form-control" placeholder="Work (min)" min="1" max="90" data-bs-toggle="tooltip" data-bs-placement="top" title="Work duration (1-90 minutes)">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" id="custom-cycle" class="form-control" placeholder="Cycles (1-10)" min="1" max="10" data-bs-toggle="tooltip" data-bs-placement="top" title="Number of cycles (1-10). After 3 cycles, you'll get a longer break.">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" id="custom-rest" class="form-control" placeholder="Rest (min)" min="1" max="30" data-bs-toggle="tooltip" data-bs-placement="top" title="Rest duration (1-30 minutes)">
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <button id="set-custom-timer" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Apply custom timer settings">Set</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5 class="mb-0">Settings</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="night-mode-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Toggle between light and dark mode">
+                            <label class="form-check-label" for="night-mode-toggle">Night Mode</label>
+                        </div>
+                        
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="audio-toggle" checked data-bs-toggle="tooltip" data-bs-placement="left" title="Enable/disable alarm sounds">
+                            <label class="form-check-label" for="audio-toggle">Alarm Sound</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Preload the alarm sound for instant playback -->
+                <audio id="alarm-sound" src="audio/alarm.mp3" preload="auto"></audio>
+                <div class="text-center text-muted small">
+                    <p>Aura Focus Timer | Boost your productivity</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

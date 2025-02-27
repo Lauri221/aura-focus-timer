@@ -1,0 +1,341 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    margin: 0;
+    padding: 50px 0 0 0; /* Added top padding */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start at top instead of center */
+    color: #212529; /* Dark text */
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+#timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #212529;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#stop-button {
+    background-color: #f44336;
+}
+
+#stop-button:hover {
+    background-color: #d32f2f;
+}
+
+#reset-button {
+    background-color: #2196F3;
+}
+
+#reset-button:hover {
+    background-color: #0b7dda;
+}
+
+.preset-timers, .custom-timer, .settings {
+    margin: 15px 0;
+}
+
+.work-time {
+    background-color: #ff9800;
+}
+
+.work-time:hover {
+    background-color: #e68900;
+}
+
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #212529; /* Dark text */
+}
+
+.timer {
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.night-mode-toggle {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .timer {
+        font-size: 2.5em;
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+}
+
+/* Add this to your CSS file */
+.setting-group {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #212529; /* Dark text for light mode */
+}
+
+.toggle-label {
+    margin-left: 8px;
+}
+
+#audio-toggle {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#audio-toggle:checked {
+    background-color: #4CAF50;
+}
+
+#audio-toggle::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    transition: transform 0.3s;
+}
+
+#audio-toggle:checked::before {
+    transform: translateX(20px);
+}
+
+.night-mode #audio-toggle:checked {
+    background-color: #8bc34a;
+}
+
+/* Night mode toggle styling */
+#night-mode-toggle, #audio-toggle {
+    margin-left: 10px;
+}
+
+/* Shake animation for timer completion */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0) }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-10px) }
+    20%, 40%, 60%, 80% { transform: translate(10px) }
+    100% { transform: translate(0) }
+}
+
+.timer-card {
+    max-width: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+.btn-primary:hover {
+    background-color: #4a545c;
+    border-color: #4a545c;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+/* Custom form switch */
+.form-switch .form-check-input {
+    width: 3em;
+}
+
+.form-check-input:checked {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+/* Better focus outline for accessibility */
+button:focus, input:focus {
+    outline: 3px solid rgba(0, 123, 255, 0.25);
+    box-shadow: none;
+}
+
+/* Add spacing between the two custom timer inputs on small screens */
+@media (max-width: 576px) {
+  #custom-time,
+  #custom-cycle,
+  #custom-rest {
+      margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #212529;
+}
+
+.night-mode .setting-label {
+    color: #f8f9fa; /* Light text in night mode */
+}
+
+
+/* Light mode - Force dark text on labels */
+body:not(.night-mode) .form-check-label {
+    color: #212529 !important; /* Dark color with !important to override Bootstrap */
+}
+
+/* Night mode - Force light text on labels */
+body.night-mode .form-check-label {
+    color: #f8f9fa !important; /* Light color with !important to override Bootstrap */
+}
+
+/* Custom tooltip styling */
+.tooltip {
+    opacity: 0.95;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 8px 12px;
+    background-color: #343a40;
+    font-size: 0.875rem;
+}
+
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #343a40;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #343a40;
+}
+
+.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: #343a40;
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: #343a40;
+}
+
+/* Night mode tooltip styling */
+.night-mode .tooltip-inner {
+    background-color: #6c757d;
+    color: #f8f9fa;
+}
+
+.night-mode .bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #6c757d;
+}
+
+.night-mode .bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #6c757d;
+}
+
+.night-mode .bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: #6c757d;
+}
+
+.night-mode .bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: #6c757d;
+}
