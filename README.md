@@ -52,11 +52,46 @@ A sleek, modern Pomodoro timer application designed to boost productivity throug
    git clone https://github.com/yourusername/aura-focus-timer.git
    ```
 
-Navigate to the project directory:
+2. Navigate to the project directory:
 
-Open index.html in your browser, or serve it using a local development server.
+```bash
+cd aura-focus-timer
+```
+
+3. Open index.html in your browser, or serve it using a local development server.
 
 ## Project Structure
+
+aura-focus-timer/
+├── css/
+│   ├── style.css          # Main styling
+│   └── night-mode.css     # Dark theme styling
+├── js/
+│   ├── app.js             # Application logic
+│   └── aura-timer-tests.js# Comprehensive test suite
+├── assets/
+│   └── sounds/
+│       ├── alarm.mp3      # Session transition sound
+│       └── end.mp3        # Completion sound
+└── index.html             # Main HTML document
+
+## Testing
+A comprehensive test suite has been provided to verify various aspects of the application including:
+
+- *Input Validation* (standard numeric, negative numbers, zero, non-numeric strings, international characters, and floating point numbers)
+- *UI Interactions* (button operations, preset timer actions, toggles for night mode and audio)
+- *Edge Cases & Security* (extremely large numbers and potential script injection attempts)
+
+## How to Run the Tests
+1. Ensure you have the test file <aura-timer-tests.js> located in your <js> folder.
+2. Include the test file in your <index.html> after your app’s main script. For example, add the following lines before the closing </body> tag:
+
+```markdown
+<script src="js/app.js"></script>
+<script src="js/aura-timer-tests.js"></script>
+```
+
+Simply commit this updated README file in your repository so that users know about the test suite and how to run the tests.
 
 ## Browser Compatibility
 
